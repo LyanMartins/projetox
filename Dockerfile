@@ -53,6 +53,6 @@ WORKDIR ${app_dir}
 
 COPY ./ ./
 
-RUN composer dumpautoload
+# RUN composer dumpautoload
 
 # CMD ./docker-cmd.sh

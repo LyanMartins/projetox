@@ -1,0 +1,30 @@
+services:
+ web:
+  image: nginx:latest
+  container_name: nginx
+  restart: always
+  volumes:
+   - ./api:/api
+   - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+  ports:
+   - "8080:80"
+  networks:
+    - projetox
+  links:
+  - php
+
+ php:
+  image: php:8.1-fpm
+  build:
+    context: .
+    dockerfile: ./Dockerfile
+  container_name: php-fpm
+  expose:
+    - "9000"
+  networks:
+    - projetox
+  volumes:
+    - "./api:/api"
+
+networks:
+  projetox:

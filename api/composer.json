@@ -1,0 +1,16 @@
+{
+    "name": "root/api",
+    "description": "projetox",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Config\\": "config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lyan Martins"
+        }
+    ],
+    "require": {}
+}

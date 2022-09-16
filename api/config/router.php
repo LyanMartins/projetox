@@ -6,7 +6,7 @@ use Config\lib\Routes;
 $router = new Routes();
 
 $router->get('/', function(){
-    echo "home";
+    header('Content-Type: html');
 });
 
 $router->get('/teste', function($param = null){
